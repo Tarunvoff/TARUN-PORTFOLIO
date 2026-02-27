@@ -342,12 +342,12 @@ function BackFace({ item }: { item: Achievement }) {
 ═══════════════════════════════════════════════════════════ */
 
 const PLACEMENT = [
-    { col: 1, mtClass: "mt-0"  },  // 01 — flush top-left
+    { col: 1, mtClass: "mt-0" },  // 01 — flush top-left
     { col: 2, mtClass: "mt-10" },  // 02 — offset top-right
-    { col: 2, mtClass: "mt-0"  },  // 03 — flush right
-    { col: 1, mtClass: "mt-6"  },  // 04 — slight offset left
-    { col: 1, mtClass: "mt-0"  },  // 05 — flush left
-    { col: 2, mtClass: "mt-8"  },  // 06 — offset right
+    { col: 2, mtClass: "mt-0" },  // 03 — flush right
+    { col: 1, mtClass: "mt-6" },  // 04 — slight offset left
+    { col: 1, mtClass: "mt-0" },  // 05 — flush left
+    { col: 2, mtClass: "mt-8" },  // 06 — offset right
 ] as const;
 
 /* ═══════════════════════════════════════════════════════════
@@ -366,7 +366,7 @@ export default function ProofOfWork() {
                 className="absolute inset-0 pointer-events-none"
                 style={{ opacity: 0.18, zIndex: 0 }}
             >
-                <Orb className="absolute inset-0 w-full h-full" />
+                <Orb />
             </div>
 
             {/* Background grid */}

@@ -12,31 +12,31 @@ const BLOG_POSTS: BlogPost[] = [
   {
     title: 'Prompt Injection & Jailbreak Attacks',
     summary: 'Exploring adversarial techniques that manipulate LLM behavior through carefully crafted inputs',
-    url: 'https://medium.com/@tarunvallabhuni28',
+    url: 'https://medium.com/@tarunvoff/prompt-injection-jailbreak-attacks-a-simple-guide-to-llm-security-0fc6f16c8774',
     date: '2025',
   },
   {
     title: 'Data Leakage in LLMs',
     summary: 'Analyzing privacy risks and information disclosure patterns in large language models',
-    url: 'https://medium.com/@tarunvallabhuni28',
+    url: 'https://medium.com/@tarunvoff/understanding-and-mitigating-data-leakage-in-large-language-models-bf83e4ff89e7',
     date: '2025',
   },
   {
     title: 'LLM Security',
     summary: 'Comprehensive framework for securing AI systems against emerging threat vectors',
-    url: 'https://medium.com/@tarunvallabhuni28',
+    url: 'https://medium.com/@tarunvoff/llm-security-cybersecurity-threats-and-how-to-tackle-them-e13b35ebf3b7',
     date: '2025',
   },
   {
     title: 'The Quantum Leap: Google Willow',
     summary: 'Deep dive into Google\'s quantum computing breakthrough and implications for AI',
-    url: 'https://medium.com/@tarunvallabhuni28',
+    url: 'https://medium.com/@tarunvoff/the-quantum-leap-my-take-on-googles-willow-and-the-future-of-computing-50621769ae97',
     date: '2024',
   },
   {
     title: 'Malicious Use of LLMs',
     summary: 'Understanding attack surfaces and defense mechanisms in generative AI systems',
-    url: 'https://medium.com/@tarunvallabhuni28',
+    url: 'https://medium.com/@tarunvoff/malicious-use-of-large-language-models-phishing-and-social-engineering-934fbcd0dd17',
     date: '2025',
   },
 ];
@@ -44,6 +44,7 @@ const BLOG_POSTS: BlogPost[] = [
 export default function Blogs() {
   return (
     <section
+      id="blogs"
       className="relative py-32 overflow-hidden"
       style={{ background: 'var(--color-bg-primary)' }}
     >

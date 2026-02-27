@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import ProjectGrid from './components/ProjectGrid';
@@ -8,15 +9,15 @@ import CodingProfiles from './components/CodingProfiles';
 import Blogs from './components/Blogs';
 import Footer from './components/Footer';
 import Orb from './components/reactbits/Orb';
+import AboutPage from './components/AboutPage';
 
-export default function App() {
+function HomePage() {
   return (
     <div
       className="min-h-screen relative"
       style={{ background: 'var(--color-bg-primary)' }}
     >
       {/* ── Full-body even dot grid ───────────────────────── */}
-      {/* Fixed so it doesn't scroll — consistent across all sections */}
       <div
         aria-hidden="true"
         className="fixed inset-0 pointer-events-none z-0"
@@ -56,5 +57,14 @@ export default function App() {
         <Footer />
       </div>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/about" element={<AboutPage />} />
+    </Routes>
   );
 }

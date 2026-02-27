@@ -81,7 +81,9 @@ export default function Hero() {
     return (
         <section id="hero" className="relative min-h-screen flex items-center justify-center">
             {/* Orb — ambient background. No overflow-hidden so glow bleeds to next section */}
-            <Orb className="z-0" />
+            <div className="absolute inset-0 z-0 pointer-events-none">
+                <Orb />
+            </div>
             <canvas ref={canvasRef} className="absolute inset-0 z-[1]" />
 
             {/* Subtle radial gradient overlay */}

@@ -127,6 +127,7 @@ const SKILL_CLUSTERS: SkillCluster[] = [
 export default function Skills() {
   return (
     <section
+      id="skills"
       className="relative py-32 overflow-hidden"
       style={{ background: 'var(--color-bg-primary)' }}
     >

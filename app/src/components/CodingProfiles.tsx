@@ -29,6 +29,7 @@ const PROFILES: CodingProfile[] = [
 export default function CodingProfiles() {
   return (
     <section
+      id="profiles"
       className="relative py-32 overflow-hidden"
       style={{ background: 'var(--color-bg-primary)' }}
     >
