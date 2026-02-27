@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm install && npm run build",
+  "buildCommand": "c && npm install && npm run build",
   "outputDirectory": "app/dist",
-  "installCommand": "echo skip"
+  "installCommand": "npm install"
 }
