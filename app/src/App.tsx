@@ -2,8 +2,12 @@ import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import ProjectGrid from './components/ProjectGrid';
 import Timeline from './components/Timeline';
+import Skills from './components/Skills';
 import ProofOfWork from './components/ProofOfWork';
+import CodingProfiles from './components/CodingProfiles';
+import Blogs from './components/Blogs';
 import Footer from './components/Footer';
+import Orb from './components/reactbits/Orb';
 
 export default function App() {
   return (
@@ -25,6 +29,11 @@ export default function App() {
         }}
       />
 
+      {/* ── Subtle Orb Background ───────────────────────── */}
+      <div className="fixed inset-0 pointer-events-none z-0" style={{ opacity: 0.15 }}>
+        <Orb />
+      </div>
+
       <Navbar />
 
       <main className="relative z-[1]">
@@ -34,7 +43,13 @@ export default function App() {
 
         <Timeline />
 
+        <Skills />
+
         <ProofOfWork />
+
+        <CodingProfiles />
+
+        <Blogs />
       </main>
 
       <div className="relative z-[1]">
