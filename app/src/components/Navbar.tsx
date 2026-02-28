@@ -207,9 +207,9 @@ export default function Navbar() {
                         GitHub
                     </a>
 
-                    {/* ── Hamburger (far right, always visible) ── */}
+                    {/* ── Hamburger (mobile only, far right) ── */}
                     <button
-                        className="p-2 rounded-full ml-1 transition-colors duration-200"
+                        className="p-2 rounded-full ml-1 transition-colors duration-200 md:hidden"
                         style={{ color: 'var(--color-text-secondary)' }}
                         onClick={() => setIsOpen(prev => !prev)}
                         aria-label={isOpen ? 'Close menu' : 'Open menu'}

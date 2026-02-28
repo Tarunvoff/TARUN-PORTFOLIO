@@ -160,8 +160,8 @@ function SpotlightTiltCard({
                 /* Glass base */
                 background: "rgba(255,255,255,0.028)",
                 border: "1px solid rgba(255,255,255,0.075)",
-                backdropFilter: "blur(14px)",
-                WebkitBackdropFilter: "blur(14px)",
+                backdropFilter: "blur(8px)",
+                WebkitBackdropFilter: "blur(8px)",
             }}
             whileHover={{
                 borderColor: `rgba(${accent},0.28)`,
@@ -358,7 +358,7 @@ export default function ProofOfWork() {
     return (
         <section
             id="proof"
-            className="relative py-24 px-6 overflow-hidden"
+            className="relative py-16 sm:py-24 px-4 sm:px-6 overflow-hidden"
             style={{ background: "var(--color-bg-primary)" }}
         >
             {/* Orb ambient — very low opacity */}
@@ -393,7 +393,7 @@ export default function ProofOfWork() {
                         004 · competitive record
                     </span>
                     <h2
-                        className="text-3xl sm:text-[2.4rem] font-bold tracking-tight"
+                        className="text-2xl sm:text-3xl md:text-[2.4rem] font-bold tracking-tight"
                         style={{ color: "var(--color-text-primary)" }}
                     >
                         Achievements
@@ -411,7 +411,7 @@ export default function ProofOfWork() {
                     Each card is the same size, placed at different
                     column positions with vertical offsets for depth.
                 */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 sm:gap-x-5 gap-y-4 sm:gap-y-5">
                     {ACHIEVEMENTS.map((item, i) => {
                         const { col, mtClass } = PLACEMENT[i];
                         return (

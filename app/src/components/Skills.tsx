@@ -128,15 +128,15 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative py-32 overflow-hidden"
+      className="relative py-20 md:py-32 overflow-hidden"
       style={{ background: 'var(--color-bg-primary)' }}
     >
       {/* Section Header */}
-      <div className="max-w-7xl mx-auto px-6 mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-12 md:mb-16">
         <ScrollFloat>
-          <div className="flex items-baseline gap-4 mb-3">
+          <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4 mb-3">
             <h2
-              className="text-4xl font-semibold tracking-tight"
+              className="text-3xl sm:text-4xl font-semibold tracking-tight"
               style={{ color: 'var(--color-text-primary)' }}
             >
               Capability Modules
@@ -149,7 +149,7 @@ export default function Skills() {
             </span>
           </div>
           <p
-            className="text-lg max-w-2xl"
+            className="text-base sm:text-lg max-w-2xl"
             style={{ color: 'var(--color-text-secondary)' }}
           >
             Core competencies across systems, intelligence layers, and infrastructure.
@@ -158,8 +158,8 @@ export default function Skills() {
       </div>
 
       {/* Skill Clusters Grid */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {SKILL_CLUSTERS.map((cluster, clusterIdx) => (
             <ScrollFloat key={clusterIdx}>
               <motion.div
@@ -178,7 +178,7 @@ export default function Skills() {
                   className="relative overflow-hidden rounded-xl h-full"
                   style={{
                     background: 'rgba(26, 26, 36, 0.6)',
-                    backdropFilter: 'blur(20px)',
+                    backdropFilter: 'blur(10px)',
                     border: '1px solid rgba(42, 42, 58, 0.4)',
                     transition: 'all 0.3s cubic-bezier(0.23, 1, 0.32, 1)',
                   }}
@@ -214,7 +214,7 @@ export default function Skills() {
                     </h3>
 
                     {/* Technologies Grid */}
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
                       {cluster.technologies.map((tech, techIdx) => (
                         <TechIcon key={techIdx} tech={tech} delay={techIdx * 0.05} />
                       ))}

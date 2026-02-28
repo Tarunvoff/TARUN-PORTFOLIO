@@ -22,8 +22,10 @@ export default function Hero() {
         resize();
         window.addEventListener('resize', resize);
 
-        // Create subtle floating particles
-        for (let i = 0; i < 40; i++) {
+        // Create subtle floating particles — fewer on mobile for performance
+        const isMobile = canvas.width < 768;
+        const particleCount = isMobile ? 18 : 40;
+        for (let i = 0; i < particleCount; i++) {
             particles.push({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
@@ -56,11 +58,12 @@ export default function Hero() {
                     const dx = particles[i].x - particles[j].x;
                     const dy = particles[i].y - particles[j].y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 150) {
+                    const connectionDist = isMobile ? 100 : 150;
+                    if (dist < connectionDist) {
                         ctx.beginPath();
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.strokeStyle = `rgba(108, 99, 255, ${0.05 * (1 - dist / 150)})`;
+                        ctx.strokeStyle = `rgba(108, 99, 255, ${0.05 * (1 - dist / connectionDist)})`;
                         ctx.lineWidth = 0.5;
                         ctx.stroke();
                     }
@@ -91,7 +94,7 @@ export default function Hero() {
                 background: 'radial-gradient(ellipse at 50% 50%, rgba(108, 99, 255, 0.07) 0%, transparent 70%)',
             }} />
 
-            <div className="relative z-[3] max-w-4xl mx-auto px-6 text-center">
+            <div className="relative z-[3] max-w-4xl mx-auto px-4 sm:px-6 text-center">
                 {/* Split text animation on headline */}
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
                     {headlineWords.map((word, i) => (

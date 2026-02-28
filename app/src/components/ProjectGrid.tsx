@@ -10,10 +10,10 @@ import ProjectModal from './ProjectModal';
 
 /* ── Category accent colours ─────────────────────────────── */
 const CAT_COLOR: Record<string, string> = {
-    'AI / ML':               '#6C63FF',
-    'GenAI / LLMs':          '#22D3EE',
-    'Systems / Infra':       '#34D399',
-    'Full-Stack Apps':       '#FBBF24',
+    'AI / ML': '#6C63FF',
+    'GenAI / LLMs': '#22D3EE',
+    'Systems / Infra': '#34D399',
+    'Full-Stack Apps': '#FBBF24',
     'Research / Simulation': '#FB7185',
 };
 
@@ -30,31 +30,31 @@ interface NodeLayout {
 const LAYOUT: Record<string, NodeLayout> = {
     // ── Row A  (y≈20–160px on 860px canvas) ──────────────────
     // left%×1200: rag=336→564, aura=624→852, track=900→1100  — no overlaps
-    'rag-document-query':  { left: '28%',  top: '3%',  size: 'medium',   zIndex: 5 },
-    'aurasound-ai':        { left: '52%',  top: '1%',  size: 'medium',   zIndex: 4 },
-    'trackwise-platform':  { left: '75%',  top: '5%',  size: 'small',    zIndex: 5 },
+    'rag-document-query': { left: '28%', top: '3%', size: 'medium', zIndex: 5 },
+    'aurasound-ai': { left: '52%', top: '1%', size: 'medium', zIndex: 4 },
+    'trackwise-platform': { left: '75%', top: '5%', size: 'small', zIndex: 5 },
     // ── Row B  (y≈280–450px) ──────────────────────────────────
     // left%×1200: api=24→292,               dviz=684→912  — wide gap avoids overlap
-    'apiris-sdk':          { left: '2%',   top: '33%', size: 'featured', zIndex: 4 },
-    'data-viz-agent':      { left: '57%',  top: '35%', size: 'medium',   zIndex: 3 },
+    'apiris-sdk': { left: '2%', top: '33%', size: 'featured', zIndex: 4 },
+    'data-viz-agent': { left: '57%', top: '35%', size: 'medium', zIndex: 3 },
     // ── Row C  (y≈530–700px) ──────────────────────────────────
     // left%×1200: soul=48→276, adya=324→592, herba=660→888  — no overlaps
-    'soul-sync':           { left: '4%',   top: '62%', size: 'medium',   zIndex: 3 },
-    'adya-mcp-hackathon':  { left: '27%',  top: '60%', size: 'featured', zIndex: 3 },
-    'herba-verse':         { left: '55%',  top: '64%', size: 'medium',   zIndex: 2 },
+    'soul-sync': { left: '4%', top: '62%', size: 'medium', zIndex: 3 },
+    'adya-mcp-hackathon': { left: '27%', top: '60%', size: 'featured', zIndex: 3 },
+    'herba-verse': { left: '55%', top: '64%', size: 'medium', zIndex: 2 },
 };
 
 /* ── Connection pairs ─────────────────────────────────────── */
 const CONNECTIONS: [string, string][] = [
-    ['apiris-sdk',         'rag-document-query'],
+    ['apiris-sdk', 'rag-document-query'],
     ['adya-mcp-hackathon', 'rag-document-query'],
     ['adya-mcp-hackathon', 'data-viz-agent'],
     ['rag-document-query', 'aurasound-ai'],
-    ['aurasound-ai',       'trackwise-platform'],
-    ['aurasound-ai',       'data-viz-agent'],
-    ['apiris-sdk',         'soul-sync'],
-    ['soul-sync',          'herba-verse'],
-    ['herba-verse',        'data-viz-agent'],
+    ['aurasound-ai', 'trackwise-platform'],
+    ['aurasound-ai', 'data-viz-agent'],
+    ['apiris-sdk', 'soul-sync'],
+    ['soul-sync', 'herba-verse'],
+    ['herba-verse', 'data-viz-agent'],
 ];
 
 /* ── Pixel dimensions per node size (used for center calc) ── */
@@ -70,9 +70,9 @@ function computeLines(containerW: number, containerH: number): Line[] {
         const lb = LAYOUT[b];
         if (!la || !lb) return null;
         const ax = (parseFloat(la.left) / 100) * containerW + NODE_W[la.size] / 2;
-        const ay = (parseFloat(la.top)  / 100) * containerH + NODE_H[la.size] / 2;
+        const ay = (parseFloat(la.top) / 100) * containerH + NODE_H[la.size] / 2;
         const bx = (parseFloat(lb.left) / 100) * containerW + NODE_W[lb.size] / 2;
-        const by = (parseFloat(lb.top)  / 100) * containerH + NODE_H[lb.size] / 2;
+        const by = (parseFloat(lb.top) / 100) * containerH + NODE_H[lb.size] / 2;
         return {
             x1: (ax / containerW) * 100,
             y1: (ay / containerH) * 100,
@@ -140,9 +140,9 @@ function ConnectorLines({
                         }}
                         transition={{
                             pathLength: { duration: 1.4, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
-                            opacity:    { duration: 0.3 },
-                            stroke:     { duration: 0.3 },
-                            strokeWidth:{ duration: 0.3 },
+                            opacity: { duration: 0.3 },
+                            stroke: { duration: 0.3 },
+                            strokeWidth: { duration: 0.3 },
                         }}
                         strokeDasharray="4 6"
                     />
@@ -183,7 +183,7 @@ function SystemNode({
             className="absolute cursor-pointer"
             style={{
                 left: layout.left,
-                top:  layout.top,
+                top: layout.top,
                 width,
                 zIndex: layout.zIndex,
             }}
@@ -200,17 +200,17 @@ function SystemNode({
         >
             <motion.div
                 animate={{
-                    y:       isHighlighted ? -6 : 0,
+                    y: isHighlighted ? -6 : 0,
                     opacity: dimmed ? 0.35 : 1,
-                    scale:   isHighlighted ? 1.02 : 1,
+                    scale: isHighlighted ? 1.02 : 1,
                 }}
                 transition={{ duration: 0.22, ease: 'easeOut' }}
                 style={{
-                    background:    'rgba(14, 14, 22, 0.78)',
-                    backdropFilter:'blur(14px)',
+                    background: 'rgba(14, 14, 22, 0.78)',
+                    backdropFilter: 'blur(14px)',
                     WebkitBackdropFilter: 'blur(14px)',
-                    borderRadius:  '10px',
-                    border:        `1px solid ${isHighlighted
+                    borderRadius: '10px',
+                    border: `1px solid ${isHighlighted
                         ? color
                         : 'rgba(42,42,58,0.7)'}`,
                     boxShadow: isHighlighted
@@ -247,9 +247,8 @@ function SystemNode({
 
                 {/* Project name */}
                 <h3
-                    className={`font-bold tracking-tight leading-tight mb-1.5 ${
-                        isFeatured ? 'text-[15px]' : 'text-[13px]'
-                    }`}
+                    className={`font-bold tracking-tight leading-tight mb-1.5 ${isFeatured ? 'text-[15px]' : 'text-[13px]'
+                        }`}
                     style={{ color: 'var(--color-text-primary)' }}
                 >
                     {project.displayName}
@@ -319,20 +318,20 @@ function SystemNode({
    ══════════════════════════════════════════════════════════ */
 export default function ProjectGrid() {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-    const [hoveredSlug,     setHoveredSlug]     = useState<string | null>(null);
-    const [lines,           setLines]            = useState<Line[]>([]);
+    const [hoveredSlug, setHoveredSlug] = useState<string | null>(null);
+    const [lines, setLines] = useState<Line[]>([]);
 
-    const sectionRef   = useRef<HTMLElement>(null);
-    const fieldRef     = useRef<HTMLDivElement>(null);
-    const isInView     = useInView(sectionRef, { once: true, margin: '-10%' });
+    const sectionRef = useRef<HTMLElement>(null);
+    const fieldRef = useRef<HTMLDivElement>(null);
+    const isInView = useInView(sectionRef, { once: true, margin: '-10%' });
 
     /* ── Parallax backdrop ─────────────────────────────────── */
     const { scrollYProgress } = useScroll({
         target: sectionRef,
         offset: ['start end', 'end start'],
     });
-    const smooth  = useSpring(scrollYProgress, { stiffness: 35, damping: 16 });
-    const bgY     = useTransform(smooth, [0, 1], ['0%', '12%']);
+    const smooth = useSpring(scrollYProgress, { stiffness: 35, damping: 16 });
+    const bgY = useTransform(smooth, [0, 1], ['0%', '12%']);
 
     /* ── Compute connector line positions after layout ─────── */
     const measureLines = useCallback(() => {
@@ -355,8 +354,8 @@ export default function ProjectGrid() {
     }, [isInView, measureLines]);
 
     /* Pick displayed projects (those with a layout entry + rest) */
-    const layoutedProjects  = PROJECTS.filter((p) => Boolean(LAYOUT[p.slug]));
-    const overflowProjects  = PROJECTS.filter((p) => !LAYOUT[p.slug]);
+    const layoutedProjects = PROJECTS.filter((p) => Boolean(LAYOUT[p.slug]));
+    const overflowProjects = PROJECTS.filter((p) => !LAYOUT[p.slug]);
 
     /* Connected slugs for a given hovered slug */
     const connectedTo = (slug: string) => {
@@ -377,7 +376,7 @@ export default function ProjectGrid() {
             id="projects"
             ref={sectionRef}
             className="relative overflow-hidden"
-            style={{ paddingTop: '80px', paddingBottom: '80px' }}
+            style={{ paddingTop: '60px', paddingBottom: '60px' }}
         >
             {/* ── Parallax grid backdrop ─────────────────────── */}
             <motion.div
@@ -406,7 +405,7 @@ export default function ProjectGrid() {
                 style={{ background: 'linear-gradient(to top, var(--color-bg-primary), transparent)' }}
             />
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
 
                 {/* ── Section header ─────────────────────────── */}
                 <div className="mb-16">
@@ -421,7 +420,7 @@ export default function ProjectGrid() {
                     </motion.span>
 
                     <motion.h2
-                        className="text-4xl sm:text-5xl font-bold tracking-tight leading-[1.05] mb-4"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.05] mb-4"
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.55, delay: 0.07, ease: [0.22, 1, 0.36, 1] }}
@@ -504,54 +503,213 @@ export default function ProjectGrid() {
                     </div>
                 </div>
 
-                {/* ── Mobile / tablet fallback — stacked list ── */}
-                <div className="lg:hidden space-y-3">
-                    {PROJECTS.map((project, i) => {
-                        const color = CAT_COLOR[project.category] || '#6C63FF';
-                        return (
-                            <motion.div
-                                key={project.slug}
-                                initial={{ opacity: 0, y: 24 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: '-30px' }}
-                                transition={{ duration: 0.5, delay: (i % 4) * 0.07, ease: [0.22, 1, 0.36, 1] }}
-                                onClick={() => setSelectedProject(project)}
-                                className="cursor-pointer rounded-lg p-4"
-                                style={{
-                                    background: 'rgba(14,14,22,0.7)',
-                                    border: `1px solid rgba(42,42,58,0.7)`,
-                                    backdropFilter: 'blur(10px)',
-                                }}
-                            >
-                                <div className="flex items-center gap-2 mb-2">
-                                    <span className="w-1.5 h-1.5 rounded-full" style={{ background: color }} />
-                                    <span className="text-[9px] font-mono uppercase tracking-[0.18em]" style={{ color: `${color}cc` }}>
-                                        {project.category}
-                                    </span>
-                                    {project.featured && (
-                                        <span className="text-[8px] font-mono uppercase tracking-[0.16em] px-1.5 py-px rounded-sm ml-auto"
-                                            style={{ color: '#6C63FF', background: 'rgba(108,99,255,0.12)', border: '1px solid rgba(108,99,255,0.22)' }}>
-                                            Featured
-                                        </span>
+                {/* ── Mobile / tablet fallback — connected stacked list ── */}
+                <div className="lg:hidden">
+                    {/* Mapped nodes — shown first with connection indicators */}
+                    <div className="relative">
+                        {layoutedProjects.map((project, i) => {
+                            const color = CAT_COLOR[project.category] || '#6C63FF';
+                            const layout = LAYOUT[project.slug];
+                            const isFeatured = layout?.size === 'featured';
+
+                            /* Find connected project names */
+                            const linked = CONNECTIONS
+                                .filter(([a, b]) => a === project.slug || b === project.slug)
+                                .map(([a, b]) => {
+                                    const otherSlug = a === project.slug ? b : a;
+                                    return layoutedProjects.find(p => p.slug === otherSlug)?.displayName;
+                                })
+                                .filter(Boolean);
+
+                            /* Is there a connection to the NEXT card in this list? */
+                            const nextProject = layoutedProjects[i + 1];
+                            const hasConnectionToNext = nextProject && CONNECTIONS.some(
+                                ([a, b]) =>
+                                    (a === project.slug && b === nextProject.slug) ||
+                                    (b === project.slug && a === nextProject.slug)
+                            );
+
+                            return (
+                                <div key={project.slug} className="relative">
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 24 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true, margin: '-30px' }}
+                                        transition={{ duration: 0.5, delay: (i % 4) * 0.07, ease: [0.22, 1, 0.36, 1] }}
+                                        onClick={() => setSelectedProject(project)}
+                                        className="cursor-pointer rounded-lg overflow-hidden"
+                                        style={{
+                                            background: isFeatured
+                                                ? 'rgba(14,14,22,0.85)'
+                                                : 'rgba(14,14,22,0.7)',
+                                            border: `1px solid ${isFeatured ? `${color}44` : 'rgba(42,42,58,0.7)'}`,
+                                            backdropFilter: 'blur(6px)',
+                                        }}
+                                    >
+                                        {/* Accent left border for featured */}
+                                        <div className="flex">
+                                            <div
+                                                className="flex-shrink-0"
+                                                style={{
+                                                    width: isFeatured ? 3 : 2,
+                                                    background: `linear-gradient(to bottom, ${color}, ${color}33)`,
+                                                }}
+                                            />
+                                            <div className={`flex-1 ${isFeatured ? 'p-5' : 'p-4'}`}>
+                                                {/* Category + Featured badge */}
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <PulseDot color={color} />
+                                                    <span className="text-[9px] font-mono uppercase tracking-[0.18em]" style={{ color: `${color}cc` }}>
+                                                        {project.category}
+                                                    </span>
+                                                    {project.featured && (
+                                                        <span className="text-[8px] font-mono uppercase tracking-[0.16em] px-1.5 py-px rounded-sm ml-auto"
+                                                            style={{ color: '#6C63FF', background: 'rgba(108,99,255,0.12)', border: '1px solid rgba(108,99,255,0.22)' }}>
+                                                            Featured
+                                                        </span>
+                                                    )}
+                                                </div>
+
+                                                {/* Name */}
+                                                <h3
+                                                    className={`font-bold mb-1 leading-tight ${isFeatured ? 'text-[16px]' : 'text-[14px]'}`}
+                                                    style={{ color: 'var(--color-text-primary)' }}
+                                                >
+                                                    {project.displayName}
+                                                </h3>
+
+                                                {/* One liner */}
+                                                <p className="text-[12px] leading-snug mb-3" style={{ color: 'var(--color-text-secondary)' }}>
+                                                    {project.oneLiner}
+                                                </p>
+
+                                                {/* Tech tags */}
+                                                <div className="flex flex-wrap gap-1 mb-3">
+                                                    {project.techStack.slice(0, isFeatured ? 4 : 3).map((t) => (
+                                                        <span key={t} className="text-[9px] font-mono px-1.5 py-0.5 rounded-sm"
+                                                            style={{ background: 'rgba(42,42,58,0.6)', color: 'var(--color-text-tertiary)', border: '1px solid rgba(42,42,58,0.8)' }}>
+                                                            {t}
+                                                        </span>
+                                                    ))}
+                                                </div>
+
+                                                {/* Connected systems indicator */}
+                                                {linked.length > 0 && (
+                                                    <div
+                                                        className="flex items-center gap-1.5 pt-2.5 flex-wrap"
+                                                        style={{ borderTop: '1px solid rgba(42,42,58,0.4)' }}
+                                                    >
+                                                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" className="flex-shrink-0" style={{ opacity: 0.4 }}>
+                                                            <circle cx="5" cy="12" r="2.5" stroke="currentColor" strokeWidth="1.5" style={{ color }} />
+                                                            <circle cx="19" cy="5" r="2.5" stroke="currentColor" strokeWidth="1.5" style={{ color }} />
+                                                            <circle cx="19" cy="19" r="2.5" stroke="currentColor" strokeWidth="1.5" style={{ color }} />
+                                                            <line x1="7" y1="11" x2="17" y2="6" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" style={{ color }} />
+                                                            <line x1="7" y1="13" x2="17" y2="18" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" style={{ color }} />
+                                                        </svg>
+                                                        <span className="text-[8px] font-mono uppercase tracking-[0.14em]" style={{ color: 'rgba(255,255,255,0.22)' }}>
+                                                            Linked:
+                                                        </span>
+                                                        {linked.slice(0, 3).map((name) => (
+                                                            <span key={name} className="text-[8px] font-mono px-1 py-px rounded-sm"
+                                                                style={{ color: `${color}99`, background: `${color}0D`, border: `1px solid ${color}1A` }}>
+                                                                {name}
+                                                            </span>
+                                                        ))}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </motion.div>
+
+                                    {/* Vertical connector to next card */}
+                                    {hasConnectionToNext && (
+                                        <div className="flex justify-center py-0.5" aria-hidden="true">
+                                            <div className="flex flex-col items-center gap-[3px]">
+                                                {[0, 1, 2, 3, 4].map(j => (
+                                                    <div key={j} className="w-px rounded-full" style={{
+                                                        height: 3,
+                                                        background: `${color}55`,
+                                                    }} />
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {/* Spacing when no connector */}
+                                    {!hasConnectionToNext && i < layoutedProjects.length - 1 && (
+                                        <div style={{ height: 12 }} />
                                     )}
                                 </div>
-                                <h3 className="text-[14px] font-bold mb-1" style={{ color: 'var(--color-text-primary)' }}>
-                                    {project.displayName}
-                                </h3>
-                                <p className="text-[12px] leading-snug mb-2.5" style={{ color: 'var(--color-text-secondary)' }}>
-                                    {project.oneLiner}
-                                </p>
-                                <div className="flex flex-wrap gap-1">
-                                    {project.techStack.slice(0, 3).map((t) => (
-                                        <span key={t} className="text-[9px] font-mono px-1.5 py-0.5 rounded-sm"
-                                            style={{ background: 'rgba(42,42,58,0.6)', color: 'var(--color-text-tertiary)', border: '1px solid rgba(42,42,58,0.8)' }}>
-                                            {t}
-                                        </span>
-                                    ))}
-                                </div>
-                            </motion.div>
-                        );
-                    })}
+                            );
+                        })}
+                    </div>
+
+                    {/* Remaining / overflow projects */}
+                    {overflowProjects.length > 0 && (
+                        <div className="mt-6">
+                            <div className="flex items-center gap-3 mb-4">
+                                <span className="text-[9px] font-mono tracking-[0.2em] uppercase" style={{ color: 'var(--color-text-tertiary)' }}>
+                                    More Systems
+                                </span>
+                                <div className="flex-1 h-px" style={{ background: 'var(--color-border-subtle)' }} />
+                            </div>
+                            <div className="space-y-3">
+                                {overflowProjects.map((project, i) => {
+                                    const color = CAT_COLOR[project.category] || '#6C63FF';
+                                    return (
+                                        <motion.div
+                                            key={project.slug}
+                                            initial={{ opacity: 0, y: 20 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            viewport={{ once: true, margin: '-30px' }}
+                                            transition={{ duration: 0.5, delay: (i % 4) * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                                            onClick={() => setSelectedProject(project)}
+                                            className="cursor-pointer rounded-lg p-4"
+                                            style={{
+                                                background: 'rgba(14,14,22,0.6)',
+                                                border: '1px solid rgba(42,42,58,0.5)',
+                                            }}
+                                        >
+                                            <div className="flex items-center gap-2 mb-1.5">
+                                                <span className="w-1.5 h-1.5 rounded-full" style={{ background: color }} />
+                                                <span className="text-[9px] font-mono uppercase tracking-[0.16em]" style={{ color: `${color}cc` }}>
+                                                    {project.category}
+                                                </span>
+                                            </div>
+                                            <h3 className="text-[13px] font-semibold mb-1 leading-snug" style={{ color: 'var(--color-text-primary)' }}>
+                                                {project.displayName}
+                                            </h3>
+                                            <p className="text-[11px] leading-snug mb-2" style={{ color: 'var(--color-text-secondary)' }}>
+                                                {project.oneLiner.slice(0, 80)}{project.oneLiner.length > 80 ? '…' : ''}
+                                            </p>
+                                            <div className="flex flex-wrap gap-1">
+                                                {project.techStack.slice(0, 2).map((t) => (
+                                                    <span key={t} className="text-[9px] font-mono px-1.5 py-0.5 rounded-sm"
+                                                        style={{ background: 'rgba(42,42,58,0.6)', color: 'var(--color-text-tertiary)', border: '1px solid rgba(42,42,58,0.8)' }}>
+                                                        {t}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </motion.div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Mobile node count */}
+                    <motion.div
+                        className="mt-6 text-center"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.3, duration: 0.5 }}
+                    >
+                        <p className="text-[10px] font-mono tracking-[0.12em]"
+                            style={{ color: 'var(--color-text-tertiary)' }}>
+                            {PROJECTS.length} systems · {CONNECTIONS.length} connections
+                        </p>
+                    </motion.div>
                 </div>
 
                 {/* ── Overflow projects (no layout slot) ────── */}

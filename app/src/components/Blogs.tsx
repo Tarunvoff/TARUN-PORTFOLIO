@@ -45,15 +45,15 @@ export default function Blogs() {
   return (
     <section
       id="blogs"
-      className="relative py-32 overflow-hidden"
+      className="relative py-20 md:py-32 overflow-hidden"
       style={{ background: 'var(--color-bg-primary)' }}
     >
       {/* Section Header */}
       <div className="max-w-7xl mx-auto px-6 mb-16">
         <ScrollFloat>
-          <div className="flex items-baseline gap-4 mb-3">
+          <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4 mb-3">
             <h2
-              className="text-4xl font-semibold tracking-tight"
+              className="text-3xl sm:text-4xl font-semibold tracking-tight"
               style={{ color: 'var(--color-text-primary)' }}
             >
               Technical Writing
@@ -66,7 +66,7 @@ export default function Blogs() {
             </span>
           </div>
           <p
-            className="text-lg max-w-2xl"
+            className="text-base sm:text-lg max-w-2xl"
             style={{ color: 'var(--color-text-secondary)' }}
           >
             Editorial explorations of AI security, quantum computing, and emerging intelligence systems.
@@ -98,7 +98,7 @@ export default function Blogs() {
                   className="relative overflow-hidden rounded-lg"
                   style={{
                     background: 'rgba(26, 26, 36, 0.5)',
-                    backdropFilter: 'blur(20px)',
+                    backdropFilter: 'blur(10px)',
                     border: '1px solid rgba(42, 42, 58, 0.3)',
                     transition: 'all 0.3s cubic-bezier(0.23, 1, 0.32, 1)',
                   }}
@@ -121,10 +121,10 @@ export default function Blogs() {
                     }}
                   />
 
-                  <div className="relative p-6 flex items-center justify-between gap-6">
+                  <div className="relative p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
                     {/* Date Badge */}
                     <div
-                      className="flex-shrink-0 w-16 h-16 rounded-lg flex items-center justify-center"
+                      className="hidden sm:flex flex-shrink-0 w-16 h-16 rounded-lg items-center justify-center"
                       style={{
                         background: 'rgba(42, 42, 58, 0.5)',
                         border: '1px solid rgba(42, 42, 58, 0.8)',
@@ -140,8 +140,18 @@ export default function Blogs() {
 
                     {/* Content */}
                     <div className="flex-1 min-w-0">
+                      {/* Mobile date badge inline */}
+                      <span
+                        className="inline-block sm:hidden text-[10px] font-mono font-semibold mb-1.5 px-2 py-0.5 rounded"
+                        style={{
+                          color: 'var(--color-text-tertiary)',
+                          background: 'rgba(42, 42, 58, 0.5)',
+                        }}
+                      >
+                        {post.date}
+                      </span>
                       <h3
-                        className="text-xl font-semibold mb-1.5 group-hover:text-gradient-accent transition-all duration-300"
+                        className="text-lg sm:text-xl font-semibold mb-1.5 group-hover:text-gradient-accent transition-all duration-300"
                         style={{
                           color: 'var(--color-text-primary)',
                         }}
@@ -157,18 +167,17 @@ export default function Blogs() {
                     </div>
 
                     {/* Read Article Link */}
-                    <div className="flex-shrink-0 flex items-center gap-2">
+                    <div className="flex-shrink-0 flex items-center gap-2 w-full sm:w-auto">
                       <span
-                        className="text-sm font-medium whitespace-nowrap relative"
+                        className="text-sm font-medium whitespace-nowrap relative flex-1 sm:flex-initial text-center sm:text-left py-2 sm:py-0 rounded-lg sm:rounded-none"
                         style={{
                           color: 'var(--color-text-secondary)',
-                          transition: 'color 0.2s ease',
                         }}
                       >
                         <span className="relative">
                           Read Article
                           <span
-                            className="absolute bottom-0 left-0 w-0 group-hover:w-full h-[1px] transition-all duration-300"
+                            className="absolute bottom-0 left-0 w-0 group-hover:w-full h-[1px] transition-all duration-300 hidden sm:block"
                             style={{
                               background: 'var(--color-accent)',
                             }}
@@ -176,7 +185,7 @@ export default function Blogs() {
                         </span>
                       </span>
                       <svg
-                        className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
+                        className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 hidden sm:block"
                         style={{ color: 'var(--color-text-tertiary)' }}
                         fill="none"
                         viewBox="0 0 24 24"

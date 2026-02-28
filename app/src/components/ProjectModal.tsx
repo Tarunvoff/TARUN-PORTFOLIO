@@ -55,7 +55,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
             {/* Modal */}
             <motion.div
-                className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto mt-[5vh] mx-4 rounded-2xl"
+                className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto mt-[3vh] sm:mt-[5vh] mx-2 sm:mx-4 rounded-xl sm:rounded-2xl"
                 style={{
                     background: 'var(--color-bg-surface)',
                     border: '1px solid var(--color-border-default)',
@@ -92,7 +92,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                     <X size={20} />
                 </button>
 
-                <div className="relative p-8">
+                <div className="relative p-5 sm:p-8">
                     {/* Category badge */}
                     <div className="flex items-center gap-2 mb-4">
                         <span className="inline-block w-2 h-2 rounded-full" style={{ background: accentColor }} />
