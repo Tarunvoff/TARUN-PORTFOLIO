@@ -22,12 +22,11 @@ const ICON_MAP: Record<string, string> = {
   HTML5: 'https://cdn.simpleicons.org/html5',
   CSS3: 'https://cdn.simpleicons.org/css3',
   React: 'https://cdn.simpleicons.org/react',
-  Nextjs: 'https://cdn.simpleicons.org/nextdotjs',
-  'Next.js': 'https://cdn.simpleicons.org/nextdotjs',
+  'Next.js': 'https://cdn.simpleicons.org/nextdotjs/fff',
   'Node.js': 'https://cdn.simpleicons.org/nodedotjs',
-  Express: 'https://cdn.simpleicons.org/express',
+  Express: 'https://cdn.simpleicons.org/express/fff',
   FastAPI: 'https://cdn.simpleicons.org/fastapi',
-  Flask: 'https://cdn.simpleicons.org/flask',
+  Flask: 'https://cdn.simpleicons.org/flask/fff',
   Django: 'https://cdn.simpleicons.org/django',
   MongoDB: 'https://cdn.simpleicons.org/mongodb',
   MySQL: 'https://cdn.simpleicons.org/mysql',
@@ -37,7 +36,7 @@ const ICON_MAP: Record<string, string> = {
   Docker: 'https://cdn.simpleicons.org/docker',
   Kubernetes: 'https://cdn.simpleicons.org/kubernetes',
   Git: 'https://cdn.simpleicons.org/git',
-  GitHub: 'https://cdn.simpleicons.org/github',
+  GitHub: 'https://cdn.simpleicons.org/github/fff',
   GitLab: 'https://cdn.simpleicons.org/gitlab',
   Linux: 'https://cdn.simpleicons.org/linux',
   Ubuntu: 'https://cdn.simpleicons.org/ubuntu',
@@ -50,76 +49,97 @@ const ICON_MAP: Record<string, string> = {
   Seaborn: 'https://cdn.simpleicons.org/seaborn',
   HuggingFace: 'https://cdn.simpleicons.org/huggingface',
   LangChain: 'https://cdn.simpleicons.org/langchain',
-  OpenAI: 'https://cdn.simpleicons.org/openai',
+  OpenAI: 'https://cdn.simpleicons.org/openai/fff',
   Streamlit: 'https://cdn.simpleicons.org/streamlit',
   Kafka: 'https://cdn.simpleicons.org/apachekafka',
   GraphQL: 'https://cdn.simpleicons.org/graphql',
   Tailwind: 'https://cdn.simpleicons.org/tailwindcss',
   Bootstrap: 'https://cdn.simpleicons.org/bootstrap',
-  Vercel: 'https://cdn.simpleicons.org/vercel',
+  Vercel: 'https://cdn.simpleicons.org/vercel/fff',
   Netlify: 'https://cdn.simpleicons.org/netlify',
-  AWS: 'https://cdn.simpleicons.org/amazonaws',
+  AWS: 'https://cdn.simpleicons.org/amazonwebservices/fff',
   'Google Cloud': 'https://cdn.simpleicons.org/googlecloud',
+  Azure: 'https://cdn.simpleicons.org/microsoftazure',
   'Power BI': 'https://cdn.simpleicons.org/powerbi',
   'VS Code': 'https://cdn.simpleicons.org/visualstudiocode',
   LeetCode: 'https://cdn.simpleicons.org/leetcode',
   Codeforces: 'https://cdn.simpleicons.org/codeforces',
+  Supabase: 'https://cdn.simpleicons.org/supabase',
+  Postman: 'https://cdn.simpleicons.org/postman',
+  Ollama: 'https://cdn.simpleicons.org/ollama/fff',
+  Pinecone: 'https://cdn.simpleicons.org/pinecone',
+  Spacy: 'https://cdn.simpleicons.org/spacy',
+  Meta: 'https://cdn.simpleicons.org/meta/fff',
+  OWASP: 'https://cdn.simpleicons.org/owasp/fff',
+  Snyk: 'https://cdn.simpleicons.org/snyk',
+  LlamaIndex: 'https://cdn.simpleicons.org/llamaindex',
 };
 
 const SKILL_CLUSTERS: SkillCluster[] = [
   {
-    title: 'Systems Engineering',
+    title: 'Systems & Cloud',
     technologies: [
       { name: 'Python', iconUrl: ICON_MAP['Python'] },
-      { name: 'Node.js', iconUrl: ICON_MAP['Node.js'] },
       { name: 'TypeScript', iconUrl: ICON_MAP['TypeScript'] },
-      { name: 'FastAPI', iconUrl: ICON_MAP['FastAPI'] },
-      { name: 'Flask', iconUrl: ICON_MAP['Flask'] },
-      { name: 'Express', iconUrl: ICON_MAP['Express'] },
+      { name: 'Docker', iconUrl: ICON_MAP['Docker'] },
+      { name: 'AWS', iconUrl: ICON_MAP['AWS'] },
+      { name: 'GCP', iconUrl: ICON_MAP['Google Cloud'] },
+      { name: 'Azure', iconUrl: ICON_MAP['Azure'] },
     ],
   },
   {
-    title: 'AI & Machine Learning',
+    title: 'Generative AI & RAG',
     technologies: [
       { name: 'OpenAI', iconUrl: ICON_MAP['OpenAI'] },
       { name: 'LangChain', iconUrl: ICON_MAP['LangChain'] },
-      { name: 'Scikit-learn', iconUrl: ICON_MAP['Scikit-learn'] },
-      { name: 'XGBoost', iconUrl: ICON_MAP['Python'] },
+      { name: 'LlamaIndex', iconUrl: ICON_MAP['LlamaIndex'] },
+      { name: 'Ollama', iconUrl: ICON_MAP['Ollama'] },
+      { name: 'Pinecone', iconUrl: ICON_MAP['Pinecone'] },
+      { name: 'HuggingFace', iconUrl: ICON_MAP['HuggingFace'] },
+    ],
+  },
+  {
+    title: 'NLP & ML Engineering',
+    technologies: [
       { name: 'PyTorch', iconUrl: ICON_MAP['PyTorch'] },
       { name: 'TensorFlow', iconUrl: ICON_MAP['TensorFlow'] },
-    ],
-  },
-  {
-    title: 'Data & Analytics',
-    technologies: [
+      { name: 'Scikit-learn', iconUrl: ICON_MAP['Scikit-learn'] },
+      { name: 'spaCy', iconUrl: ICON_MAP['Spacy'] },
       { name: 'Pandas', iconUrl: ICON_MAP['Pandas'] },
       { name: 'NumPy', iconUrl: ICON_MAP['NumPy'] },
-      { name: 'Pinecone', iconUrl: ICON_MAP['Pinecone'] || ICON_MAP['Python'] },
-      { name: 'MongoDB', iconUrl: ICON_MAP['MongoDB'] },
-      { name: 'PostgreSQL', iconUrl: ICON_MAP['PostgreSQL'] },
-      { name: 'Redis', iconUrl: ICON_MAP['Redis'] },
     ],
   },
   {
-    title: 'Frontend & Integration',
+    title: 'AI Security & Guardrails',
     technologies: [
-      { name: 'React', iconUrl: ICON_MAP['React'] },
-      { name: 'Vite', iconUrl: ICON_MAP['Vercel'] },
-      { name: 'Tailwind', iconUrl: ICON_MAP['Tailwind'] },
-      { name: 'Framer Motion', iconUrl: ICON_MAP['Vite'] },
-      { name: 'Redux', iconUrl: ICON_MAP['Python'] },
-      { name: 'Streamlit', iconUrl: ICON_MAP['Streamlit'] },
+      { name: 'LLM Guardrails', iconUrl: ICON_MAP['Snyk'] },
+      { name: 'Prompt Shielding', iconUrl: ICON_MAP['Snyk'] },
+      { name: 'PII Sanitization', iconUrl: ICON_MAP['Snyk'] },
+      { name: 'OWASP LLM Sec', iconUrl: ICON_MAP['OWASP'] },
+      { name: 'LlamaGuard', iconUrl: ICON_MAP['Meta'] },
+      { name: 'SecureLLM', iconUrl: ICON_MAP['Snyk'] },
     ],
   },
   {
-    title: 'Tools & Workflow',
+    title: 'Data & Databases',
+    technologies: [
+      { name: 'PostgreSQL', iconUrl: ICON_MAP['PostgreSQL'] },
+      { name: 'MongoDB', iconUrl: ICON_MAP['MongoDB'] },
+      { name: 'Redis', iconUrl: ICON_MAP['Redis'] },
+      { name: 'Supabase', iconUrl: ICON_MAP['Supabase'] },
+      { name: 'Firebase', iconUrl: ICON_MAP['Firebase'] },
+      { name: 'MySQL', iconUrl: ICON_MAP['MySQL'] },
+    ],
+  },
+  {
+    title: 'Tools & Frontend',
     technologies: [
       { name: 'Git', iconUrl: ICON_MAP['Git'] },
-      { name: 'Docker', iconUrl: ICON_MAP['Docker'] },
-      { name: 'AWS', iconUrl: ICON_MAP['AWS'] },
-      { name: 'Supabase', iconUrl: ICON_MAP['Vercel'] },
+      { name: 'React', iconUrl: ICON_MAP['React'] },
+      { name: 'Next.js', iconUrl: ICON_MAP['Next.js'] },
+      { name: 'Node.js', iconUrl: ICON_MAP['Node.js'] },
+      { name: 'FastAPI', iconUrl: ICON_MAP['FastAPI'] },
       { name: 'Vercel', iconUrl: ICON_MAP['Vercel'] },
-      { name: 'Postman', iconUrl: ICON_MAP['Vercel'] },
     ],
   },
 ];
@@ -237,6 +257,7 @@ interface TechIconProps {
 
 function TechIcon({ tech, delay }: TechIconProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   return (
     <motion.div
@@ -265,23 +286,27 @@ function TechIcon({ tech, delay }: TechIconProps) {
           transform: isHovered ? 'scale(1.04)' : 'scale(1)',
         }}
       >
-        {tech.iconUrl ? (
+        {!imgError && tech.iconUrl ? (
           <img
             src={tech.iconUrl}
             alt={`${tech.name} logo`}
             className="w-8 h-8 object-contain"
+            onError={() => setImgError(true)}
             style={{
               filter: isHovered ? 'none' : 'grayscale(100%) brightness(0.7)',
             }}
           />
         ) : (
           <div
+            className="w-8 h-8 flex items-center justify-center font-mono text-[10px] font-bold rounded-lg"
             style={{
-              fontSize: '1.5rem',
-              filter: isHovered ? 'none' : 'grayscale(100%) brightness(0.7)',
+              background: 'rgba(108, 99, 255, 0.12)',
+              color: 'var(--color-accent)',
+              border: '1px solid rgba(108, 99, 255, 0.25)',
+              filter: isHovered ? 'none' : 'brightness(0.8)',
             }}
           >
-            {tech.name[0]}
+            {tech.name.replace(/[^a-zA-Z0-9]/g, '').substring(0, 2).toUpperCase()}
           </div>
         )}
       </div>
