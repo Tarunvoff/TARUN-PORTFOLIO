@@ -45,14 +45,14 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* Default render at 125% — site is designed to feel close & immersive */
-    zoom: 1.25;
+    /* Default render at 130% — site is designed to feel close & immersive */
+    zoom: 1.3;
   }
 
   /* Mobile: slightly zoomed for better readability */
   @media (max-width: 767px) {
     html {
-      zoom: 1.15;
+      zoom: 1.4;
     }
   }
 
