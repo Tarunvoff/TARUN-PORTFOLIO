@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, Github, Linkedin, Mail, MapPin, GraduationCap, Briefcase, Code2, Brain, Download } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Orb from './reactbits/Orb';
+import profilePic from '../assets/Tarun_profile.jpeg';
 
 const fadeUp = {
     initial: { opacity: 0, y: 30 },
@@ -69,46 +70,71 @@ export default function AboutPage() {
             <main className="relative z-[1] max-w-4xl mx-auto px-6 pt-28 pb-24">
                 {/* Hero section */}
                 <motion.section
-                    className="mb-20"
+                    className="mb-20 flex flex-col md:flex-row gap-10 items-center justify-between"
                     variants={stagger}
                     initial="initial"
                     animate="animate"
                 >
-                    <motion.div variants={fadeUp} transition={{ duration: 0.6 }}>
-                        <span
-                            className="text-[11px] font-mono tracking-[0.2em] uppercase mb-4 block"
-                            style={{ color: 'var(--color-text-tertiary)' }}
+                    {/* Left: Content */}
+                    <div className="flex-1 w-full">
+                        <motion.div variants={fadeUp} transition={{ duration: 0.6 }}>
+                            <span
+                                className="text-[11px] font-mono tracking-[0.2em] uppercase mb-4 block"
+                                style={{ color: 'var(--color-text-tertiary)' }}
+                            >
+                                About
+                            </span>
+                        </motion.div>
+
+                        <motion.h1
+                            className="text-5xl sm:text-6xl font-bold tracking-tight leading-[1.05] mb-6"
+                            variants={fadeUp}
+                            transition={{ duration: 0.6, delay: 0.1 }}
                         >
-                            About
-                        </span>
-                    </motion.div>
+                            <span style={{ color: 'var(--color-text-primary)' }}>Tarun </span>
+                            <span className="text-gradient-accent">V</span>
+                        </motion.h1>
 
-                    <motion.h1
-                        className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-6"
-                        variants={fadeUp}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                    >
-                        <span style={{ color: 'var(--color-text-primary)' }}>Tarun </span>
-                        <span className="text-gradient-accent">V</span>
-                    </motion.h1>
+                        <motion.p
+                            className="text-lg sm:text-xl leading-relaxed mb-8"
+                            style={{ color: 'var(--color-text-secondary)' }}
+                            variants={fadeUp}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                        >
+                            Software engineer exploring the intersection of AI reliability, agentic systems, and applied intelligence.
+                        </motion.p>
 
-                    <motion.p
-                        className="text-xl sm:text-2xl leading-relaxed max-w-2xl mb-8"
-                        style={{ color: 'var(--color-text-secondary)' }}
-                        variants={fadeUp}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                    >
-                        Software engineer exploring the intersection of AI reliability, agentic systems, and applied intelligence.
-                    </motion.p>
+                        <motion.div
+                            className="flex flex-wrap gap-3"
+                            variants={fadeUp}
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                        >
+                            <InfoPill icon={<MapPin size={14} />} text="India" />
+                            <InfoPill icon={<GraduationCap size={14} />} text="B.Tech, AI & DS" />
+                            <InfoPill icon={<Code2 size={14} />} text="Full-Stack + AI" />
+                        </motion.div>
+                    </div>
 
+                    {/* Right: Picture */}
                     <motion.div
-                        className="flex flex-wrap gap-3"
+                        className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden flex-shrink-0"
                         variants={fadeUp}
-                        transition={{ duration: 0.6, delay: 0.3 }}
+                        transition={{ duration: 0.7, delay: 0.2 }}
+                        style={{
+                            border: '2px solid rgba(108, 99, 255, 0.4)',
+                            boxShadow: '0 0 20px rgba(108, 99, 255, 0.2)',
+                        }}
+                        whileHover={{
+                            scale: 1.03,
+                            borderColor: 'var(--color-accent)',
+                            boxShadow: '0 0 32px rgba(108, 99, 255, 0.35)',
+                        }}
                     >
-                        <InfoPill icon={<MapPin size={14} />} text="India" />
-                        <InfoPill icon={<GraduationCap size={14} />} text="B.Tech, CSE" />
-                        <InfoPill icon={<Code2 size={14} />} text="Full-Stack + AI" />
+                        <img
+                            src={profilePic}
+                            alt="Tarun V"
+                            className="w-full h-full object-cover object-top"
+                        />
                     </motion.div>
                 </motion.section>
 

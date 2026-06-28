@@ -3,16 +3,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const NAV_LINKS = [
+    { label: 'About', href: '/about', isRoute: true },
     { label: 'Projects', href: '#projects' },
+    { label: 'Experience', href: '#experience' },
     { label: 'Achievements', href: '#proof' },
     { label: 'Skills', href: '#skills' },
-    { label: 'About', href: '/about', isRoute: true },
 ];
 
 const MENU_ITEMS = [
     { label: 'Home', href: '/', isRoute: true },
     { label: 'About', href: '/about', isRoute: true },
     { label: 'Projects', href: '#projects' },
+    { label: 'Experience', href: '#experience' },
     { label: 'Achievements', href: '#proof' },
     { label: 'Tech Skills', href: '#skills' },
     { label: 'Blogs', href: '#blogs' },
@@ -38,7 +40,7 @@ export default function Navbar() {
         if (!isHomePage) return;
         const onScroll = () => {
             setScrolled(window.scrollY > 32);
-            const sections = ['hero', 'projects', 'proof', 'skills', 'blogs', 'profiles'];
+            const sections = ['hero', 'projects', 'experience', 'proof', 'skills', 'blogs', 'profiles'];
             let current = 'hero';
             for (const id of sections) {
                 const el = document.getElementById(id);

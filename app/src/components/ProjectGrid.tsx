@@ -29,32 +29,33 @@ interface NodeLayout {
 
 const LAYOUT: Record<string, NodeLayout> = {
     // ── Row A  (y≈20–160px on 860px canvas) ──────────────────
-    // left%×1200: rag=336→564, aura=624→852, track=900→1100  — no overlaps
+    // left%×1200: rag=336→564, herba=624→852, apk=900→1128  — no overlaps
     'rag-document-query': { left: '28%', top: '3%', size: 'medium', zIndex: 5 },
-    'aurasound-ai': { left: '52%', top: '1%', size: 'medium', zIndex: 4 },
-    'trackwise-platform': { left: '75%', top: '5%', size: 'small', zIndex: 5 },
+    'herba-verse': { left: '52%', top: '1%', size: 'medium', zIndex: 4 },
+    'apk-shield': { left: '75%', top: '5%', size: 'medium', zIndex: 5 },
     // ── Row B  (y≈280–450px) ──────────────────────────────────
-    // left%×1200: api=24→292,               dviz=684→912  — wide gap avoids overlap
+    // left%×1200: api=24→292,               aegis=684→952  — wide gap avoids overlap
     'apiris-sdk': { left: '2%', top: '33%', size: 'featured', zIndex: 4 },
-    'data-viz-agent': { left: '57%', top: '35%', size: 'medium', zIndex: 3 },
+    'aegis': { left: '57%', top: '33%', size: 'featured', zIndex: 3 },
     // ── Row C  (y≈530–700px) ──────────────────────────────────
-    // left%×1200: soul=48→276, adya=324→592, herba=660→888  — no overlaps
-    'soul-sync': { left: '4%', top: '62%', size: 'medium', zIndex: 3 },
-    'adya-mcp-hackathon': { left: '27%', top: '60%', size: 'featured', zIndex: 3 },
-    'herba-verse': { left: '55%', top: '64%', size: 'medium', zIndex: 2 },
+    // left%×1200: secops=24→292, adya=348→616, reflect=684→912  — no overlaps
+    'ai-secops-platform': { left: '2%', top: '60%', size: 'featured', zIndex: 3 },
+    'adya-mcp-hackathon': { left: '29%', top: '60%', size: 'featured', zIndex: 3 },
+    'reflect-llm': { left: '57%', top: '64%', size: 'medium', zIndex: 2 },
 };
 
 /* ── Connection pairs ─────────────────────────────────────── */
 const CONNECTIONS: [string, string][] = [
     ['apiris-sdk', 'rag-document-query'],
     ['adya-mcp-hackathon', 'rag-document-query'],
-    ['adya-mcp-hackathon', 'data-viz-agent'],
-    ['rag-document-query', 'aurasound-ai'],
-    ['aurasound-ai', 'trackwise-platform'],
-    ['aurasound-ai', 'data-viz-agent'],
-    ['apiris-sdk', 'soul-sync'],
-    ['soul-sync', 'herba-verse'],
-    ['herba-verse', 'data-viz-agent'],
+    ['adya-mcp-hackathon', 'reflect-llm'],
+    ['rag-document-query', 'herba-verse'],
+    ['herba-verse', 'apk-shield'],
+    ['herba-verse', 'aegis'],
+    ['apiris-sdk', 'ai-secops-platform'],
+    ['ai-secops-platform', 'reflect-llm'],
+    ['reflect-llm', 'aegis'],
+    ['apk-shield', 'aegis'],
 ];
 
 /* ── Pixel dimensions per node size (used for center calc) ── */

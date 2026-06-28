@@ -85,3 +85,4 @@ This project is a **Employee Management System** implemented in C, designed for 
 - Introduce a GUI for better user interaction.
 - Add email notifications for request approvals/rejections.
 - Enable data storage in a database or external file for persistence.
+

@@ -49,10 +49,10 @@
     zoom: 1.25;
   }
 
-  /* Mobile: reset zoom so content isn't cramped */
+  /* Mobile: slightly zoomed for better readability */
   @media (max-width: 767px) {
     html {
-      zoom: 1;
+      zoom: 1.15;
     }
   }
 
