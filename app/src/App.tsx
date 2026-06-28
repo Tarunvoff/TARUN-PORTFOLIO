@@ -43,9 +43,9 @@ function HomePage() {
         href="https://drive.google.com/file/d/15G8CSScZ_T7KQbY5p4vt4MexK-ie1awk/view?usp=sharing"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed right-6 bottom-8 z-40 flex items-center gap-2.5 px-5 py-3 rounded-full border shadow-lg group transition-all duration-300"
+        className="fixed right-4 bottom-4 md:right-6 md:bottom-8 z-40 flex items-center justify-center rounded-full border shadow-lg group transition-all duration-300"
         style={{
-          background: 'rgba(20, 20, 30, 0.82)',
+          background: 'rgba(20, 20, 30, 0.85)',
           borderColor: 'rgba(108, 99, 255, 0.45)',
           boxShadow: '0 8px 24px rgba(0, 0, 0, 0.45), 0 1px 0 rgba(255,255,255,0.025) inset',
           backdropFilter: 'blur(20px)',
@@ -61,17 +61,28 @@ function HomePage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: 'spring', stiffness: 200, damping: 20, delay: 1.2 }}
       >
-        <Download
-          size={15}
-          className="transition-transform duration-300 group-hover:translate-y-[1px]"
-          style={{ color: 'var(--color-accent)' }}
-        />
-        <span
-          className="font-mono text-[11px] font-semibold tracking-[0.14em] uppercase"
-          style={{ color: '#fff' }}
-        >
-          Resume
-        </span>
+        {/* Desktop Layout (Pill) */}
+        <div className="hidden md:flex items-center gap-2.5 px-5 py-3">
+          <Download
+            size={15}
+            className="transition-transform duration-300 group-hover:translate-y-[1px]"
+            style={{ color: 'var(--color-accent)' }}
+          />
+          <span
+            className="font-mono text-[11px] font-semibold tracking-[0.14em] uppercase"
+            style={{ color: '#fff' }}
+          >
+            Resume
+          </span>
+        </div>
+
+        {/* Mobile Layout (Circular FAB) */}
+        <div className="flex md:hidden items-center justify-center w-12 h-12">
+          <Download
+            size={18}
+            style={{ color: 'var(--color-accent)' }}
+          />
+        </div>
       </motion.a>
 
       <Navbar />
