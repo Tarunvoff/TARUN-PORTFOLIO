@@ -278,7 +278,7 @@ export default function AboutPage() {
                     </p>
                     <div className="flex flex-wrap gap-4">
                         <a
-                            href="https://drive.google.com/file/d/14e1FNWHGEC8MTRzZLAsXBUIf55uvCGUT/view?usp=sharing"
+                            href="https://drive.google.com/file/d/15G8CSScZ_T7KQbY5p4vt4MexK-ie1awk/view?usp=sharing"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300"
