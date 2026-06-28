@@ -143,3 +143,22 @@
     background-size: 24px 24px;
   }
 }
+
+/* ── Custom responsive utility classes for guaranteed mobile layout ── */
+@media (max-width: 767px) {
+  .mobile-hide {
+    display: none !important;
+  }
+  .mobile-show-flex {
+    display: flex !important;
+  }
+  .mobile-show-block {
+    display: block !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .desktop-hide {
+    display: none !important;
+  }
+}

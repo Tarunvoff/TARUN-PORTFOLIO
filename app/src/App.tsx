@@ -62,7 +62,7 @@ function HomePage() {
         transition={{ type: 'spring', stiffness: 200, damping: 20, delay: 1.2 }}
       >
         {/* Desktop Layout (Pill) */}
-        <div className="hidden md:flex items-center gap-2.5 px-5 py-3">
+        <div className="mobile-hide flex items-center gap-2.5 px-5 py-3">
           <Download
             size={15}
             className="transition-transform duration-300 group-hover:translate-y-[1px]"
@@ -77,7 +77,7 @@ function HomePage() {
         </div>
 
         {/* Mobile Layout (Circular FAB) */}
-        <div className="flex md:hidden items-center justify-center w-12 h-12">
+        <div className="desktop-hide flex items-center justify-center w-12 h-12">
           <Download
             size={18}
             style={{ color: 'var(--color-accent)' }}

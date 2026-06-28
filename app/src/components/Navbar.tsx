@@ -126,12 +126,12 @@ export default function Navbar() {
 
                     {/* ── Divider ── */}
                     <div
-                        className="w-px h-4 mx-1 hidden md:block"
+                        className="w-px h-4 mx-1 mobile-hide"
                         style={{ background: 'var(--color-border-default)' }}
                     />
 
                     {/* ── Desktop nav links (hidden on mobile) ── */}
-                    <div className="hidden md:flex items-center gap-0.5">
+                    <div className="mobile-hide flex items-center gap-0.5">
                         {NAV_LINKS.map((link) => {
                             const sectionId = link.href.replace('#', '');
                             const isActive = link.isRoute
@@ -177,7 +177,7 @@ export default function Navbar() {
 
                     {/* ── Divider (desktop) ── */}
                     <div
-                        className="w-px h-4 mx-1 hidden md:block"
+                        className="w-px h-4 mx-1 mobile-hide"
                         style={{ background: 'var(--color-border-default)' }}
                     />
 
@@ -187,7 +187,7 @@ export default function Navbar() {
                         href="https://github.com/Tarunvoff"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hidden md:flex items-center gap-1.5 px-3.5 py-1.5 text-[12px] font-mono tracking-wide rounded-full transition-all duration-200"
+                        className="mobile-hide flex items-center gap-1.5 px-3.5 py-1.5 text-[12px] font-mono tracking-wide rounded-full transition-all duration-200"
                         style={{
                             color: 'var(--color-text-tertiary)',
                             border: '1px solid transparent',
@@ -211,7 +211,7 @@ export default function Navbar() {
 
                     {/* ── Hamburger (mobile only, far right) ── */}
                     <button
-                        className="p-2 rounded-full ml-1 transition-colors duration-200 md:hidden"
+                        className="p-2 rounded-full ml-1 transition-colors duration-200 desktop-hide"
                         style={{ color: 'var(--color-text-secondary)' }}
                         onClick={() => setIsOpen(prev => !prev)}
                         aria-label={isOpen ? 'Close menu' : 'Open menu'}
